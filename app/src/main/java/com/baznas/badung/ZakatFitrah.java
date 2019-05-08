@@ -188,7 +188,7 @@ public class ZakatFitrah extends AppCompatActivity {
                                 HashMap<String,String> params = new HashMap<>();
 
                                 params.put(konfigurasi.ADD_IDSCAN,IDSCANNER);
-                                params.put(konfigurasi.ADD_IDSCAN, item.getNama_zis());
+                                params.put(konfigurasi.ADD_IDSCAN, item.getId_zis());
                                 params.put(konfigurasi.ADD_NAMA_GAMBAR,f.getName());
                                 params.put(konfigurasi.ADD_NAMA_PENGIRIM,nama_pengirim);
                                 params.put(konfigurasi.ADD_NO_TELEPON,no_telepon);
