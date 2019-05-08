@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:id="@+id/formzakatmal"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:layout_marginVertical="28dp"
+    android:orientation="vertical"
+    android:paddingHorizontal="20dp"
+    tools:context=".zakatmalform">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3sp"
+                    android:gravity="left"
+                    android:paddingHorizontal="20dp"
+                    android:text="ID"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="4dp"
+                    android:background="@drawable/kotak">
+
+                    <TextView
+                        android:id="@+id/qrSCAN"
+                        android:layout_width="match_parent"
+                        android:maxLength="20"
+                        android:maxLines="1"
+                        android:gravity="center"
+                        android:hint="Scan QR Code"
+                        android:layout_height="40dp"
+                        android:background="@null" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3sp"
+                    android:gravity="left"
+                    android:paddingHorizontal="20dp"
+                    android:text="Nama Pengirim"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="4dp"
+                    android:background="@drawable/kotak">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:maxLength="20"
+                        android:maxLines="1"
+                        android:paddingLeft="10dp"
+                        android:layout_height="40dp"
+                        android:background="@null" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3sp"
+                    android:gravity="left"
+                    android:paddingHorizontal="20dp"
+                    android:text="Bank Pengirim"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="4dp"
+                    android:background="@drawable/kotak">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:maxLines="1"
+                        android:paddingLeft="10dp"
+                        android:maxLength="20"
+                        android:background="@null" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3sp"
+                    android:gravity="left"
+                    android:paddingHorizontal="20dp"
+                    android:text="No Rekening"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="4dp"
+                    android:background="@drawable/kotak">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:maxLines="1"
+                        android:paddingLeft="10dp"
+                        android:maxLength="20"
+                        android:background="@null" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3sp"
+                    android:gravity="left"
+                    android:paddingHorizontal="20dp"
+                    android:text="Pemilik Rekening"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="4dp"
+                    android:background="@drawable/kotak">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:maxLines="1"
+                        android:paddingLeft="10dp"
+                        android:maxLength="20"
+                        android:background="@null" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3sp"
+                    android:gravity="left"
+                    android:paddingHorizontal="20dp"
+                    android:text="Tanggal"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:paddingRight="10dp"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="4dp"
+                    android:background="@drawable/kotak">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:inputType="date"
+                        android:gravity="center"
+                        android:id="@+id/tv"
+                        android:background="@null" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:id="@+id/btn"
+                        android:background="@null"
+                        android:layout_marginRight="10dp"
+                        android:layout_height="wrap_content"
+                        android:text="Date"
+                        android:gravity="right|center_vertical"/>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3sp"
+                    android:gravity="left"
+
+                    android:paddingHorizontal="20dp"
+                    android:text="Jumlah"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="4dp"
+                    android:background="@drawable/kotak">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:maxLines="1"
+                        android:maxLength="20"
+                        android:layout_height="40dp"
+                        android:paddingLeft="10dp"
+                        android:inputType="number"
+                        android:background="@null" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3sp"
+                    android:gravity="left"
+                    android:paddingHorizontal="20dp"
+                    android:text="Bukti"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/kotak"
+                    android:paddingHorizontal="4dp">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@null"
+                        android:inputType="number"
+                        android:maxLength="20"
+                        android:paddingLeft="10dp"
+                        android:maxLines="1" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Upload File"
+                android:orientation="vertical">
+
+            </Button>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
