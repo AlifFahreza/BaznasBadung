@@ -66,6 +66,7 @@ public class ZakatMal extends AppCompatActivity {
     private static final int PICK_IMAGE = 100;
     public String IDSCANNER = "0";
     private File f;
+    private Data item;
     private Bitmap imageUri;
     private ByteArrayOutputStream byteArrayOutputStream;
     private byte[] byteArray;
@@ -187,6 +188,7 @@ public class ZakatMal extends AppCompatActivity {
                                 HashMap<String,String> params = new HashMap<>();
 
                                 params.put(konfigurasi.ADD_IDSCAN,IDSCANNER);
+                                params.put(konfigurasi.ADD_IDSCAN, item.getNama_zis());
                                 params.put(konfigurasi.ADD_NAMA_GAMBAR,f.getName());
                                 params.put(konfigurasi.ADD_NAMA_PENGIRIM,nama_pengirim);
                                 params.put(konfigurasi.ADD_NO_TELEPON,no_telepon);
@@ -234,7 +236,7 @@ public class ZakatMal extends AppCompatActivity {
                             try {
                                 JSONObject obj = response.getJSONObject(i);
 
-                                Data item = new Data();
+                                item = new Data();
 
                                 item.setId_zis(obj.getString(konfigurasi.TAG_ID));
                                 item.setNama_zis(obj.getString(konfigurasi.TAG_NAMAA));
