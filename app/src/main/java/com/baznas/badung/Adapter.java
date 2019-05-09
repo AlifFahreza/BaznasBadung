@@ -7,12 +7,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.List;
 
 public class Adapter extends BaseAdapter {
         private Activity activity;
         private LayoutInflater inflater;
         private List<Data> item;
+        public static String id;
+        public static String nama;
 
         public Adapter(Activity activity, List<Data> item) {
             this.activity = activity;
@@ -49,8 +53,10 @@ public class Adapter extends BaseAdapter {
             Data data;
             data = item.get(position);
 
-            spinnerItem.setText(data.getNama_zis());
 
+            spinnerItem.setText(data.getNama_zis());
+            id = data.getId_zis();
+            nama = data.getNama_zis();
             return convertView;
         }
     }

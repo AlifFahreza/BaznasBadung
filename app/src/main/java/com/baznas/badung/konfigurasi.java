@@ -10,7 +10,7 @@ public class konfigurasi {
     public static final String URL_GET_SPINNER = "http://myindosnack.com/baznas/api/selectspinner.php";
 
     //infaq
-    public static final String ADD_NAMA_PENGIRIM = "nama_pengirim";
+    public static final String ADD_NAMA_PENGIRIM= "nama_pengirim";
     public static final String ADD_NO_TELEPON = "telp_pengirim";
     public static final String ADD_BANK_PENGIRIM = "bank_pengirim";
     public static final String ADD_NO_REKENING = "norek_pengirim";

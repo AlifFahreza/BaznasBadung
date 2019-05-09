@@ -28,6 +28,7 @@ import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -67,6 +68,7 @@ public class Infaq extends AppCompatActivity{
     private TextView tv, scanner, teksBukti;
     private EditText namaPengirim, notelepon, bankpengirim, norekening, pemilikrekening, jumlah;
     private Button btn, kirimInfaq;
+    public String selectedItemText;
     private File f;
     private ImageView backInfaq, buktiImage;
     private IntentIntegrator btnScan;
@@ -114,6 +116,19 @@ public class Infaq extends AppCompatActivity{
 
         adapter = new Adapter(Infaq.this, listSpinner);
         spinner_zis.setAdapter(adapter);
+        spinner_zis.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String items = spinner_zis.getSelectedItem().toString();
+
+                Toast.makeText(Infaq.this, ""+Adapter.nama, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         callData();
 
@@ -174,6 +189,8 @@ public class Infaq extends AppCompatActivity{
                     if (imageUri != null){
                         imageUri.compress(Bitmap.CompressFormat.JPEG, 40, byteArrayOutputStream);
                         byteArray = byteArrayOutputStream.toByteArray();
+                        Toast.makeText(Infaq.this, ""+item.getId_zis(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Infaq.this, ""+IDSCANNER, Toast.LENGTH_SHORT).show();
                         ConvertImage = Base64.encodeToString(byteArray, Base64.DEFAULT);
 
                         class KirimInfaq extends AsyncTask<Void,Void,String>{
@@ -197,20 +214,36 @@ public class Infaq extends AppCompatActivity{
                             protected String doInBackground(Void... v) {
                                 HashMap<String,String> params = new HashMap<>();
 
-                                params.put(konfigurasi.ADD_IDSCAN,IDSCANNER);
-                                params.put(konfigurasi.ADD_IDSCAN, item.getId_zis());
-                                params.put(konfigurasi.ADD_NAMA_GAMBAR,f.getName());
-                                params.put(konfigurasi.ADD_NAMA_PENGIRIM,nama_pengirim);
-                                params.put(konfigurasi.ADD_NO_TELEPON,no_telepon);
-                                params.put(konfigurasi.ADD_BANK_PENGIRIM,bank_pengirim);
-                                params.put(konfigurasi.ADD_PEMILIK_REKENING,pemilik_rekening);
-                                params.put(konfigurasi.ADD_NO_REKENING,no_rekening);
-                                params.put(konfigurasi.ADD_JUMLAH,Jumlah);
-                                params.put(konfigurasi.ADD_BUKTI,ConvertImage);
+                                if(IDSCANNER.equals("0")){
+                                    params.put(konfigurasi.ADD_IDSCAN,Adapter.id);
+                                    params.put(konfigurasi.ADD_NAMA_GAMBAR,f.getName());
+                                    params.put(konfigurasi.ADD_NAMA_PENGIRIM,nama_pengirim);
+                                    params.put(konfigurasi.ADD_NO_TELEPON,no_telepon);
+                                    params.put(konfigurasi.ADD_BANK_PENGIRIM,bank_pengirim);
+                                    params.put(konfigurasi.ADD_PEMILIK_REKENING,pemilik_rekening);
+                                    params.put(konfigurasi.ADD_NO_REKENING,no_rekening);
+                                    params.put(konfigurasi.ADD_JUMLAH,Jumlah);
+                                    params.put(konfigurasi.ADD_BUKTI,ConvertImage);
 
-                                RequestHandler rh = new RequestHandler();
-                                String res = rh.sendPostRequest(konfigurasi.URL_POST_ALL, params);
-                                return res;
+                                    RequestHandler rh = new RequestHandler();
+                                    String res = rh.sendPostRequest(konfigurasi.URL_POST_ALL, params);
+                                    return res;
+                                } else if(Adapter.nama.equals("Baznas")){
+                                    params.put(konfigurasi.ADD_IDSCAN,IDSCANNER);
+                                    params.put(konfigurasi.ADD_NAMA_GAMBAR,f.getName());
+                                    params.put(konfigurasi.ADD_NAMA_PENGIRIM,nama_pengirim);
+                                    params.put(konfigurasi.ADD_NO_TELEPON,no_telepon);
+                                    params.put(konfigurasi.ADD_BANK_PENGIRIM,bank_pengirim);
+                                    params.put(konfigurasi.ADD_PEMILIK_REKENING,pemilik_rekening);
+                                    params.put(konfigurasi.ADD_NO_REKENING,no_rekening);
+                                    params.put(konfigurasi.ADD_JUMLAH,Jumlah);
+                                    params.put(konfigurasi.ADD_BUKTI,ConvertImage);
+
+                                    RequestHandler rh = new RequestHandler();
+                                    String res = rh.sendPostRequest(konfigurasi.URL_POST_ALL, params);
+                                    return res;
+                                }
+                                return null;
                             }
                         }
 
@@ -252,6 +285,7 @@ public class Infaq extends AppCompatActivity{
                                 item.setNama_zis(obj.getString(konfigurasi.TAG_NAMAA));
 
                                 listSpinner.add(item);
+
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
